@@ -1,0 +1,3 @@
+SELECT students.name as student, AVG(assignment_submissions.duration) as average_assignment_duration FROM students JOIN assignment_submissions ON students.id = student_id JOIN cohorts ON cohort_id = cohorts.id where students.end_date IS NULL GROUP BY students.name ORDER BY AVG(assignment_submissions.duration) desc;
+
+-- SELECT students.name as student, AVG(assignment_submissions.duration) as average_assignment_duration FROM students JOIN assignment_submissions ON students.id = student_id JOIN cohorts ON cohort_id = cohorts.id where cohorts.end_date IS NULL GROUP BY students.name ORDER BY SUM(assignment_submissions.duration) desc;
